@@ -9,7 +9,7 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
     <span class="tc" id="cases">Total Cases:{{this.CountryName.TotalConfirmed}}</span>
     <span class="ac" id="cases">Total Recovered Cases:{{this.CountryName.TotalRecovered}}</span>
     <span class="death" id="cases">Total Death:{{this.CountryName.TotalDeaths}}</span>
-    <span class="tc" id="cases"><button (click)="onClick()">Back</button></span>
+    <span class="tc" id="cases"><button (click)="onClick()" class="back">Back</button></span>
   </div>
   <div>
     <tr class="th">
