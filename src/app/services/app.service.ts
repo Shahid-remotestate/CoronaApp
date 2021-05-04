@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class AppService {
   url: string;
+  cityUrl: string;
   constructor(
     private http: HttpClient
   ) { }
@@ -15,5 +16,9 @@ export class AppService {
   getDetail(country: string): Observable<any>{
       this.url = 'https://api.covid19api.com/dayone/country/'+`${country}`;
       return this.http.get<any>(this.url);
+  }
+  getcitydetail(country: string): Observable<any>{
+    this.cityUrl = 'https://api.covid19api.com/live/country/'+`${country}`;
+    return this.http.get<any>(this.cityUrl);
   }
 }

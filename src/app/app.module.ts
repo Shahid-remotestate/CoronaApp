@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetailWithDateComponent } from './DetailWithDate/detail-with-date/detail-with-date.component';
+import { CityComponent } from './city/city/city.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailWithDateComponent
+    DetailWithDateComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,
