@@ -27,6 +27,18 @@ tr{
 .bt{
   margin-left: 120px;
 }
+.th{
+  padding-left: 120px;
+}
+.date{
+  //background-color: slateblue;
+  color: slateblue;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .back{
   font-size: 16px;
   background-color: slateblue;
@@ -34,16 +46,4 @@ tr{
   border-radius: 12px;
   padding-left: 15px;
   padding-right: 15px;
-}
-.item{
-  color: slateblue;
-  background-color: white;
-  border-radius: 8px;
-  font-size: 15px;
-}
-.data{
-  margin: 20px;
-  color:red;
-  display: flex;
-  justify-content: center;
 }

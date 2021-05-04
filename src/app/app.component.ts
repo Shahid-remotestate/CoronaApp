@@ -6,8 +6,9 @@ import { AppService } from './services/app.service';
   selector: 'app-root',
   styleUrls: ['./app.component.scss'],
   template: `
+    <app-detail-with-date *ngIf="flag2" (BackToDetail)="DetailBack($event)" [CountryDetail]="this.countrydata"></app-detail-with-date>
     <app-city *ngIf="flag" (back)="backHandle($event)" [CountryName]="this.countrydata"></app-city>
-  <div [style.display]="(flag?'none':'')">
+  <div [style.display]="(flag2 || flag?'none':'')">
     <h1>WorldWide Corona Cases</h1>
     <div class="total">
       <span class="tc" id="cases">Total Cases:{{this.summary?.Global.TotalConfirmed}}</span>
@@ -22,10 +23,10 @@ import { AppService } from './services/app.service';
           <th class="cn">Total Death</th>
         </tr>
         <tr *ngFor="let item of this.summary?.Countries">
-              <td *ngIf="!flag"><button (click)="onClick(item)">{{item.Country}}</button></td>
-              <td *ngIf="!flag">{{item.TotalConfirmed}}</td>
-              <td *ngIf="!flag">{{item.TotalRecovered}}</td>
-              <td *ngIf="!flag">{{item.TotalDeaths}}</td>
+              <td ><button  class="item" (click)="onClick(item)">{{item.Country}}</button><button (click)="detailClick(item)" class="detail">Details</button></td>
+              <td >{{item.TotalConfirmed}}</td>
+              <td >{{item.TotalRecovered}}</td>
+              <td >{{item.TotalDeaths}}</td>
         </tr>
     </div>
   </div>
@@ -36,6 +37,7 @@ export class AppComponent implements OnInit{
   summary;
   items: string;
   flag = false;
+  flag2 = false;
   countrydata;
   title = 'coronacases';
   constructor(
@@ -44,6 +46,13 @@ export class AppComponent implements OnInit{
   }
   ngOnInit(): void {
     this.appservices.getSummary().subscribe((data) => this.summary = data);
+  }
+  detailClick(event): void{
+    this.countrydata = event;
+    this.flag2 = !this.flag2;
+  }
+  DetailBack(event): void{
+    this.flag2 = event;
   }
   onClick(item): void{
     this.items = item.Country;
