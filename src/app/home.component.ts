@@ -21,10 +21,10 @@ import { AppService } from './services/app.service';
           <th class="cn">Total Death</th>
         </tr>
         <tr *ngFor="let item of this.summary?.Countries">
-              <td ><button type="button" [routerLink]="[item.Country , 'state']" class="item" >{{item.Country}}</button><button type="button" [routerLink]="[item.Country,'detail']" class="detail">Details</button></td>
-              <td >{{item.TotalConfirmed}}</td>
-              <td >{{item.TotalRecovered}}</td>
-              <td >{{item.TotalDeaths}}</td>
+              <td class="row1"><button type="button" [routerLink]="[item.Country , 'state']" class="item" >{{item.Country}}</button><button type="button" [routerLink]="[item.Country,'detail']" class="detail">Details</button></td>
+              <td class="row2">{{item.TotalConfirmed}}</td>
+              <td class="row3">{{item.TotalRecovered}}</td>
+              <td class="row4">{{item.TotalDeaths}}</td>
         </tr>
     </div>
   </div>

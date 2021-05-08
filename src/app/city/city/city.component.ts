@@ -24,10 +24,10 @@ import { ActivatedRoute } from '@angular/router';
           <th class="cn">Total Death</th>
         </tr>
           <tr *ngFor="let item of city">
-            <td><button class="item"> {{item.Province}}</button></td>
-            <td>{{item.Confirmed}}</td>
-            <td>{{item.Recovered}}</td>
-            <td>{{item.Deaths}}</td>
+            <td class="row1"><button class="item"> {{item.Province}}</button></td>
+            <td class="row2">{{item.Confirmed}}</td>
+            <td class="row3">{{item.Recovered}}</td>
+            <td class="row4">{{item.Deaths}}</td>
           </tr>
       </div>
       <div *ngIf="!flag" class="data">{{this.CountryName}}'s states data not found!! </div>

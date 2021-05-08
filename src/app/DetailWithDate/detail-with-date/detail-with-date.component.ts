@@ -25,13 +25,13 @@ import { ActivatedRoute } from '@angular/router';
         <th class="cn">Total Death</th>
       </tr>
       <tr *ngFor="let item of detailData;let i = index">
-        <td class="date">{{flag? this.detailData[this.detailData.length-1-i].Date.substring(0,10) : item.Date.substring(0,10)}}</td>
-        <td>{{flag? this.detailData[this.detailData.length-1-i].Confirmed-this.detailData[this.detailData.length-2-i]?.Confirmed: item.Confirmed-this.detailData[i-1]?.Confirmed}}</td>
-        <td>{{flag? this.detailData[this.detailData.length-1-i].Confirmed : item.Confirmed}}</td>
-        <td>{{flag? this.detailData[this.detailData.length-1-i].Recovered-this.detailData[this.detailData.length-2-i]?.Recovered: item.Recovered-this.detailData[i-1]?.Recovered}}</td>
-        <td>{{flag? this.detailData[this.detailData.length-1-i].Recovered : item.Recovered}}</td>
-        <td>{{flag? this.detailData[this.detailData.length-1-i].Deaths-this.detailData[this.detailData.length-2-i]?.Deaths: item.Deaths-this.detailData[i-1]?.Deaths}}</td>
-        <td>{{flag? this.detailData[this.detailData.length-1-i].Deaths : item.Deaths}}</td>
+        <td class="date row1">{{flag? this.detailData[this.detailData.length-1-i].Date.substring(0,10) : item.Date.substring(0,10)}}</td>
+        <td class="row2">{{flag? this.detailData[this.detailData.length-1-i].Confirmed-this.detailData[this.detailData.length-2-i]?.Confirmed: item.Confirmed-this.detailData[i-1]?.Confirmed}}</td>
+        <td class="row3">{{flag? this.detailData[this.detailData.length-1-i].Confirmed : item.Confirmed}}</td>
+        <td class="row4">{{flag? this.detailData[this.detailData.length-1-i].Recovered-this.detailData[this.detailData.length-2-i]?.Recovered: item.Recovered-this.detailData[i-1]?.Recovered}}</td>
+        <td class="row5">{{flag? this.detailData[this.detailData.length-1-i].Recovered : item.Recovered}}</td>
+        <td class="row6">{{flag? this.detailData[this.detailData.length-1-i].Deaths-this.detailData[this.detailData.length-2-i]?.Deaths: item.Deaths-this.detailData[i-1]?.Deaths}}</td>
+        <td class="row7">{{flag? this.detailData[this.detailData.length-1-i].Deaths : item.Deaths}}</td>
       </tr>
     </div>
   `
