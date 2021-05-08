@@ -22,7 +22,6 @@ h1{
 tr{
   display: flex;
   justify-content: space-around;
-  margin: 10px;
 }
 .bt{
   margin-left: 120px;
@@ -46,4 +45,35 @@ tr{
   border-radius: 12px;
   padding-left: 15px;
   padding-right: 15px;
+}
+.row1{
+  position: absolute;
+  left: 155px;
+}
+.row2{
+  position: absolute;
+  left: 342px;
+}
+.row3{
+  position: absolute;
+  left: 522px;
+}
+.row4{
+  position: absolute;
+  left: 750px;
+}
+.row5{
+  position: absolute;
+  left: 1000px;
+}
+.row6{
+  position: absolute;
+  left: 1225px;
+}
+.row7{
+  position: absolute;
+  left: 1400px;
+}
+tr{
+  margin-top: 35px;
 }

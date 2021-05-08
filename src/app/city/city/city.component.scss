@@ -22,7 +22,6 @@ h1{
 tr{
   display: flex;
   justify-content: space-around;
-  margin: 10px;
 }
 .bt{
   margin-left: 120px;
@@ -46,4 +45,23 @@ tr{
   color:red;
   display: flex;
   justify-content: center;
+}
+.row1{
+  position: absolute;
+  left: 120px;
+}
+.row2{
+  position: absolute;
+  left: 510px;
+}
+.row3{
+  position: absolute;
+  left: 880px;
+}
+.row4{
+  position: absolute;
+  left: 1290px;
+}
+tr{
+  margin-top: 35px;
 }
