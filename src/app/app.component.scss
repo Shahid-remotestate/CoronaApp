@@ -35,10 +35,44 @@ button{
   color: white;
   border-radius: 12px;
   font-size: 10px;
+  text-decoration: none;
 }
 .item{
   color: slateblue;
   background-color: white;
   border-radius: 8px;
   font-size: 15px;
+}
+a{
+ border: 2px solid slateblue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  color: white;
+  background-color: slateblue;
+  float: right;
+  font-size: 20px;
+  margin: 2px;
+}
+nav{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.not-found{
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-size: 20px;
+}
+.a{
+  font-size: 16px;
+  background-color: slateblue;
+  color: white;
+  border-radius: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
 }

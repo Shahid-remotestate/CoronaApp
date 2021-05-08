@@ -1,16 +1,18 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { AppService } from '../../services/app.service';
+
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-with-date',
   styleUrls: ['./detail-with-date.component.scss'],
   template: `
-    <h1>{{this.CountryDetail.Country}}'s Details Corona cases</h1>
+    <h1>{{this.CountryDetail}}'s Details Corona cases</h1>
     <div class="total">
-      <span class="tc" id="cases">Total Cases:{{this.CountryDetail.TotalConfirmed}}</span>
-      <span class="ac" id="cases">Total Recovered Cases:{{this.CountryDetail.TotalRecovered}}</span>
-      <span class="death" id="cases">Total Death:{{this.CountryDetail.TotalDeaths}}</span>
-      <span class="tc" id="cases"><button (click)="onBack()" class="back">Back</button><button class="back" (click)="Onflag()">{{this.flag?'ASC':'DESC'}}</button></span>
+      <span class="tc" id="cases">Total Cases:{{this.CountryData?.TotalConfirmed}}</span>
+      <span class="ac" id="cases">Total Recovered Cases:{{this.CountryData?.TotalRecovered}}</span>
+      <span class="death" id="cases">Total Death:{{this.CountryData?.TotalDeaths}}</span>
+      <span class="tc" id="cases"><button type="button" routerLink="/" class="back">Back</button><button class="back" (click)="Onflag()">{{this.flag?'ASC':'DESC'}}</button></span>
     </div>
     <div>
       <tr class="th">
@@ -37,16 +39,20 @@ import { AppService } from '../../services/app.service';
 export class DetailWithDateComponent implements OnInit {
   detailData;
   flag = true;
-  @Input() CountryDetail;
-
-  @Output() BackToDetail: EventEmitter<boolean> = new EventEmitter<boolean>();
-  constructor( private appService: AppService) { }
+  CountryDetail: string;
+  CountryData;
+  constructor(private appService: AppService , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.appService.getDetail(this.CountryDetail.Country).subscribe((data) => this.detailData = data);
-  }
-  onBack(): void {
-    this.BackToDetail.emit(false);
+    this.route.paramMap.subscribe(data => this.CountryDetail = data.get('countryname'));
+    this.appService.getDetail(this.CountryDetail).subscribe((data) => this.detailData = data);
+    this.appService.getSummary().subscribe(data => {
+      for (const item of data.Countries){
+        if ( item.Country === this.CountryDetail){
+          this.CountryData = item;
+        }
+      }
+    });
   }
   Onflag(): void{
     this.flag = !this.flag;
