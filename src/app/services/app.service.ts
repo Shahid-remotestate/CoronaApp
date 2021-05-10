@@ -13,9 +13,9 @@ export class AppService {
   getSummary(): Observable<any>{
     return this.http.get<any>('https://api.covid19api.com/summary');
   }
-  getDetail(country: string): Observable<any>{
-      this.url = 'https://api.covid19api.com/dayone/country/' + `${country}`;
-      return this.http.get<any>(this.url);
+  getDetail(country: string): Observable<any> {
+    this.url = 'https://api.covid19api.com/dayone/country/' + `${country}`;
+    return this.http.get<any>(this.url);
   }
   getcitydetail(country: string): Observable<any>{
     this.cityUrl = 'https://api.covid19api.com/live/country/' + `${country}`;
